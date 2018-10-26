@@ -126,7 +126,25 @@ express的使用
 
    运行 `npm run watch` 便可以监听文件的变动并且自动编译了
 
-7. 
+7. 配置`webpack`添加`jquery`支持
+
+   - 安装jquery
+
+     ```shell
+     npm install jquery --save
+     ```
+
+   - 配置`webpack.config.js`
+
+     ```javascript
+         resolve: {
+             alias: {
+                 jquery: path.join(__dirname, "node_modules/jquery/dist/jquery.min.js"),
+             }
+         }
+     ```
+
+   配置好之后，只要在需要引用jquery的文件中添加`var $ = require('jquery')`即可。其他的解析方案的配置方法与之相同。
 
 
 
