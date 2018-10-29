@@ -28,7 +28,7 @@ const Note = sequelize.define('note', {
 Note.sync().then(() => {
     Note.create({text: 'hello world!'})
 }).then(() => {
-    Note.findAll().then(notes => {
+    Note.findAll({raw:true}).then(notes => {
         console.log(notes)
     })
 });
