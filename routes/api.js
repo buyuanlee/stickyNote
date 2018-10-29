@@ -5,7 +5,9 @@ var Note = require('../model/note').Note
 /* GET users listing. */
 router.get('/notes', function (req, res, next) {
     Note.findAll({raw: true}).then((notes) => {
-        res.send({status: 0, data: notes})
+        res.send({status: 0, data: notes}).catch(() => {
+            res.send({status: 0, errorMsg: '数据库出错'})
+        })
     })
 });
 router.post('/notes/add', function (req, res, next) {
@@ -18,7 +20,9 @@ router.post('/notes/add', function (req, res, next) {
 });
 router.post('/notes/edit', function (req, res, next) {
     Note.update({text: req.body.note}, {where: {id: req.body.id}}).then(() => {
-        res.send({status: 0})
+        res.send({status: 0}).catch(() => {
+            res.send({status: 0, errorMsg: '数据库出错'})
+        })
     })
 });
 router.post('/notes/delete', function (req, res, next) {
