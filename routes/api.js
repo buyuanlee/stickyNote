@@ -22,7 +22,11 @@ router.post('/notes/edit', function (req, res, next) {
     })
 });
 router.post('/notes/delete', function (req, res, next) {
-    console.log('测试4')
+    Note.destroy({where: {id: req.body.id}}).then(() => {
+        res.send({status: 0})
+    }).catch(() => {
+        res.send({status: 0, errorMsg: '数据库出错'})
+    })
 });
 
 module.exports = router;
