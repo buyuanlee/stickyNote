@@ -10,7 +10,11 @@ router.get('/notes', function (req, res, next) {
 });
 router.post('/notes/add', function (req, res, next) {
     var note = req.body.note;
-    console.log(note)
+    Note.create({text: note}).then(() => {
+        res.send({status: 0})
+    }).catch(() => {
+        res.send({status: 0, errorMsg: '数据库出错'})
+    })
 });
 router.post('/notes/edit', function (req, res, next) {
     console.log('测试3')
