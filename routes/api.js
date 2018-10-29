@@ -1,10 +1,12 @@
 var express = require('express');
 var router = express.Router();
+var Note = require('../model/note').Note
 
 /* GET users listing. */
 router.get('/notes', function (req, res, next) {
-    // res.send('respond with a resource');
-    console.log('测试note')
+    Note.findAll({raw: true}).then((notes) => {
+        res.send({status: 0, data: notes})
+    })
 });
 router.post('/notes/add', function (req, res, next) {
     var note = req.body.note;
