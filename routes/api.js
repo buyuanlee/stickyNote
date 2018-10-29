@@ -17,7 +17,9 @@ router.post('/notes/add', function (req, res, next) {
     })
 });
 router.post('/notes/edit', function (req, res, next) {
-    console.log('测试3')
+    Note.update({text: req.body.note}, {where: {id: req.body.id}}).then(() => {
+        res.send({status: 0})
+    })
 });
 router.post('/notes/delete', function (req, res, next) {
     console.log('测试4')
