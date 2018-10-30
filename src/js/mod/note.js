@@ -11,12 +11,12 @@ function Note(opts){
 }
 Note.prototype = {
     colors: [
-        ['#ea9b35','#efb04e'], // headColor, containerColor
-        ['#dd598b','#e672a2'],
-        ['#eee34b','#f2eb67'],
-        ['#c24226','#d15a39'],
-        ['#c1c341','#d0d25c'],
-        ['#3f78c3','#5591d2']
+        ['#519D9E','#58C9B9'], // headColor, containerColor
+        ['#CE6D39','#F17F42'],
+        ['#008c9e','#46BBD4'],
+        ['#8FBC94','#C5E99B'],
+        ['#DE7E73','#ED9282'],
+        ['#3b8686','#79bd9a']
     ],
 
     defaultOpts: {
