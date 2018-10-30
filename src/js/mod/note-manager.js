@@ -1,4 +1,3 @@
-var Toast = require('./toast.js').Toast;
 var Note = require('./note.js').Note;
 var Toast = require('./toast.js').Toast;
 var Event = require('mod/event.js');
