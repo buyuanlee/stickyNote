@@ -88,6 +88,15 @@ a {
 
 .stars {
   background: url(http://91jean.oss-cn-hangzhou.aliyuncs.com/18-8-31/16567303.jpg) fixed no-repeat;
-  background-size: cover;
-  z-index: -1;
+  position: relative;
+}
+.stars::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  background: url(http://91jean.oss-cn-hangzhou.aliyuncs.com/18-8-31/16567303.jpg) fixed no-repeat;
+  filter:blur(5px);
+  z-index:-1;
+  background-size:cover;
 }
